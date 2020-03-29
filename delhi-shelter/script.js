@@ -22,6 +22,10 @@ function format ( d ) {
             '<td>'+d.gsx$address.$t+'</td>'+
         '</tr>'+
         '<tr>'+
+            '<td>Google Map:</td>'+
+            '<td><a href="'+d.gsx$googlemapslink.$t+'">'+d.gsx$googlemapslink.$t+'</td>'+
+        '</tr>'+
+        '<tr>'+
             '<td>Capacity:</td>'+
             '<td>'+d.gsx$capacity.$t+'</td>'+
         '</tr>'+
