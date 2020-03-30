@@ -104,7 +104,10 @@ $(document).ready( function () {
     } );
 
     $('select').on( 'change', function (e) {
-        console.log($(this).find(":selected").text());
-        table.column(1).search( $(this).find(":selected").text() ).draw();
-    } );
+        if ($(this).find(":selected").text() === "All State") {
+            table.column(1).search( "\\*\\", true, false).draw();
+        } else {
+            table.column(1).search( $(this).find(":selected").val(), true, false).draw();
+        }
+    });
 });
