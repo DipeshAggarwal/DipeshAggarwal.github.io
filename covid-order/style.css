@@ -28,7 +28,7 @@ select {
 
 select:focus {
   content: "";
-  background-color: #0799d3;
+  background-color: #78c249;
   text-align-last: center;
 }
 
@@ -42,4 +42,12 @@ select:hover {
     font-weight: 500;
     min-width: 400px;
   }
+}
+
+th {
+    background-color: #78c249;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #78c24950;
 }
