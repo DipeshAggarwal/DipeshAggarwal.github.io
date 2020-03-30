@@ -2,22 +2,6 @@ function format ( d ) {
     // `d` is the original data object for the row
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
         '<tr>'+
-            '<td>State:</td>'+
-            '<td>'+d.gsx$state.$t+'</td>'+
-        '</tr>'+
-        '<tr>'+
-            '<td>Source</td>'+
-            '<td>'+d.gsx$source.$t+'</td>'+
-        '</tr>'+
-        '<tr>'+
-            '<td>Date of Order:</td>'+
-            '<td>'+d.gsx$dateoforderannouncement.$t+'</td>'+
-        '</tr>'+
-        '<tr>'+
-            '<td>Issued By:</td>'+
-            '<td>'+d.gsx$issuedbyannouncedby.$t+'</td>'+
-        '</tr>'+
-        '<tr>'+
             '<td>Food (including PDS):</td>'+
             '<td>'+d.gsx$foodincludingpds.$t+'</td>'+
         '</tr>'+
