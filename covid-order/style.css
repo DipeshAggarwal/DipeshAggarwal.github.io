@@ -5,3 +5,33 @@ td.details-control {
 tr.shown td.details-control {
     background: url('details_close.png') no-repeat center center;
 }
+
+select {
+  background: none transparent;
+  height: 60px;
+  border: none;
+  outline: 0;
+  border-bottom: 2px solid white;
+  width: 20vw;
+  min-width: 480px;
+  margin: auto;
+  letter-spacing: .10em;
+  font-size: 36px;
+  font-weight: 600;
+  display: block;
+  color: #000;
+  text-transform: uppercase;
+  position: relative;
+  transition: color .3s .15s ease-in;
+  text-align-last: center;
+}
+
+select:focus {
+  content: "";
+  background-color: #0799d3;
+  text-align-last: center;
+}
+
+select:hover {
+  color: #ffffff;
+}
