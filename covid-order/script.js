@@ -92,9 +92,16 @@ $(document).ready( function () {
 			{ "mDataProp": "gsx$source.$t" },
 			{ "mDataProp": "gsx$dateoforderannouncement.$t" },
 			{ "mDataProp": "gsx$issuedbyannouncedby.$t" }
-		]
+		],
+        "fnCreatedRow": function( nRow, aData, iDataIndex ) {
+            value = aData.gsx$state.$t.replace(/\s+/g,' ').trim();
+            if ( $("#state-box option[value='" + value + "']").length == 0 ) {
+                $('<option/>').val(value).html(value).appendTo('#state-box');
+            }
+            //uniqueState.indexOf(aData.gsx$state.$t.replace(/\s+/g,' ').trim()) === -1 && uniqueState.push(aData.gsx$state.$t.replace(/\s+/g,' ').trim());
+        }
 	});
-	
+
 	// Add event listener for opening and closing details
     $('#orderTable tbody').on('click', 'td', function () {
         var tr = $(this).closest('tr');
@@ -110,5 +117,10 @@ $(document).ready( function () {
             row.child( format(row.data()) ).show();
             tr.addClass('shown');
         }
+    } );
+
+    $('select').on( 'change', function (e) {
+        console.log($(this).find(":selected").text());
+        table.column(1).search( $(this).find(":selected").text() ).draw();
     } );
 });
