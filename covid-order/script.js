@@ -36,7 +36,7 @@ $(document).ready( function () {
         "bServerSide": false,
         "bProcessing": true,
         "sAjaxDataProp": "feed.entry",
-        "sAjaxSource": "https://spreadsheets.google.com/feeds/list/19PBIps8-1k4jEjEv8iRH6DQp1IsVZlYCBwninqSxYNg/2/public/values?alt=json",
+        "sAjaxSource": "https://spreadsheets.google.com/feeds/list/19PBIps8-1k4jEjEv8iRH6DQp1IsVZlYCBwninqSxYNg/1/public/values?alt=json",
         "aoColumns": [
             {
                 "orderable":      false,
@@ -55,8 +55,8 @@ $(document).ready( function () {
             { "mDataProp": "gsx$health.$t" },
             { "mDataProp": "gsx$medicine.$t" },
             { "mDataProp": "gsx$migrants.$t" },
-            { "mDataProp": "gsx$workersemployee.$t" },
-            { "mDataProp": "gsx$farmer.$t" },
+            { "mDataProp": "gsx$workersemployees.$t" },
+            { "mDataProp": "gsx$farmers.$t" },
             { "mDataProp": "gsx$undertrialsandprison.$t" },
             { "mDataProp": "gsx$otherrelief.$t" },
             { "mDataProp": "gsx$comments.$t" },
