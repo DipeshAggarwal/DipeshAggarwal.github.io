@@ -106,3 +106,7 @@ th {
 .dataTables_info {
   white-space: normal!important;
 }
+
+.control {
+  padding: .25rem!important;
+}

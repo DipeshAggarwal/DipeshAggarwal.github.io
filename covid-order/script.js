@@ -97,6 +97,9 @@ $(document).ready( function () {
                 };
             });
         },
+        "fixedHeader": {
+            header: true
+        }
 	});
 
     $('select#state-box').on( 'change', function (e) {
