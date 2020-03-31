@@ -91,7 +91,6 @@ $(document).ready( function () {
             dataArray = aData.gsx$issuescovered.$t.replace(/\s+/g,' ').trim().split(",");
             dataArray.forEach(function(entry) {
                 if ( $("#issue-box option[value='" + entry.trim() + "']").length == 0 ) {
-                    console.log(entry);
                     $('<option/>').val(entry.trim()).html(entry.trim()).appendTo('#issue-box');
                 };
             });
@@ -113,4 +112,11 @@ $(document).ready( function () {
             table.column(3).search( $(this).find(":selected").val()).draw();
         }
     });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    for(var key of urlParams.keys()) {
+        if ( !(isNaN(key)) ) {
+            table.column(parseInt(key)).search(urlParams.get(key)).draw();
+        }
+    }
 });
