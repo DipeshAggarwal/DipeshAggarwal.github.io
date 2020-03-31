@@ -109,9 +109,9 @@ $(document).ready( function () {
 
     $('select#issue-box').on( 'change', function (e) {
         if ($(this).find(":selected").text() === "All Issues") {
-            table.column(3).search("").draw();
+            table.column(2).search("").draw();
         } else {
-            table.column(3).search( $(this).find(":selected").val()).draw();
+            table.column(2).search( $(this).find(":selected").val()).draw();
         }
     });
 
@@ -130,7 +130,7 @@ $(document).ready( function () {
 });
 
 const urlParams = new URLSearchParams(window.location.search);
-const queryArray = ["", "state", "date", "issues", "issued_by", "source"];
+const queryArray = ["", "state", "issues", "date", "issued_by", "source"];
 
 // If a length query is given, show that many entries per page
 if ( urlParams.get("length") ) {
