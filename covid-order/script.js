@@ -7,7 +7,6 @@ $(document).ready( function () {
                 renderer: function ( api, rowIdx, columns ) {
                     var data = $.map( columns, function ( col, i ) {
                         if (col.hidden && col.data) {
-                            console.log(col.data.includes("http"));
                             if (col.data.includes("http")) {
                                 return '<tr data-dt-row="'+col.rowIndex+'" data-dt-column="'+col.columnIndex+'">'+
                                     '<td>'+col.title+':'+'</td> '+
@@ -44,6 +43,7 @@ $(document).ready( function () {
             },
             { "mDataProp": "gsx$state.$t" },
             { "mDataProp": "gsx$dateoforderannouncement.$t" },
+            { "mDataProp": "gsx$issuescovered.$t" },
             { "mDataProp": "gsx$issuedbyannouncedby.$t" },
             { "mDataProp": "gsx$source.$t" },
             { "mDataProp": "gsx$foodincludingpds.$t" },
@@ -51,10 +51,10 @@ $(document).ready( function () {
             { "mDataProp": "gsx$pensions.$t" },
             { "mDataProp": "gsx$incomesupportincludingnrega.$t" },
             { "mDataProp": "gsx$health.$t" },
-            { "mDataProp": "gsx$transport.$t" },
+            { "mDataProp": "gsx$medicine.$t" },
             { "mDataProp": "gsx$migrants.$t" },
-            { "mDataProp": "gsx$workeremployeerelated.$t" },
-            { "mDataProp": "gsx$farmers.$t" },
+            { "mDataProp": "gsx$workersemployee.$t" },
+            { "mDataProp": "gsx$farmer.$t" },
             { "mDataProp": "gsx$undertrialsandprison.$t" },
             { "mDataProp": "gsx$otherrelief.$t" },
             { "mDataProp": "gsx$comments.$t" },
@@ -88,10 +88,13 @@ $(document).ready( function () {
             if ( $("#state-box option[value='" + value + "']").length == 0 ) {
                 $('<option/>').val(value).html(value).appendTo('#state-box');
             };
-            dateValue = aData.gsx$dateoforderannouncement.$t.replace(/\s+/g,' ').trim();
-            if ( $("#date-box option[value='" + dateValue + "']").length == 0 ) {
-                $('<option/>').val(dateValue).html(dateValue).appendTo('#date-box');
-            };
+            dataArray = aData.gsx$issuescovered.$t.replace(/\s+/g,' ').trim().split(",");
+            dataArray.forEach(function(entry) {
+                if ( $("#issue-box option[value='" + entry.trim() + "']").length == 0 ) {
+                    console.log(entry);
+                    $('<option/>').val(entry.trim()).html(entry.trim()).appendTo('#issue-box');
+                };
+            });
         },
 	});
 
@@ -103,11 +106,11 @@ $(document).ready( function () {
         }
     });
 
-    $('select#date-box').on( 'change', function (e) {
-        if ($(this).find(":selected").text() === "All Dates") {
-            table.column(2).search("").draw();
+    $('select#issue-box').on( 'change', function (e) {
+        if ($(this).find(":selected").text() === "All Issues") {
+            table.column(3).search("").draw();
         } else {
-            table.column(2).search( $(this).find(":selected").val()).draw();
+            table.column(3).search( $(this).find(":selected").val()).draw();
         }
     });
 });
