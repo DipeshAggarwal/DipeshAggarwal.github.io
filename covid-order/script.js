@@ -74,6 +74,7 @@ $(document).ready( function () {
                 targets:   0
             }
         ],
+        "order": [[1, '']],
         "breakpoints": [
           {name: 'bigdesktop', width: Infinity},
           {name: 'meddesktop', width: 1480},
