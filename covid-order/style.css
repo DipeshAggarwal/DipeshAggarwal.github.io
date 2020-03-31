@@ -11,7 +11,7 @@ select {
   height: 60px;
   border: none;
   outline: 0;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #74d3dc;
   width: 20vw;
   min-width: 300px;
   margin: auto;
@@ -44,7 +44,9 @@ select:hover {
   select {
     font-size: 29px;
     font-weight: 500;
-    min-width: 400px;
+    min-width: 320px;
+    max-width: 320px;
+    margin-bottom: 12px;
   }
   .row {
     margin-left: -5px;
@@ -55,7 +57,7 @@ select:hover {
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 2.0rem;
   }
 }
 
