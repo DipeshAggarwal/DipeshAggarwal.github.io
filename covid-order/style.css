@@ -1,9 +1,9 @@
 td.details-control {
-    background: url('details_open.png') no-repeat center center;
-    cursor: pointer;
+  background: url('details_open.png') no-repeat center center;
+  cursor: pointer;
 }
 tr.shown td.details-control {
-    background: url('details_close.png') no-repeat center center;
+  background: url('details_close.png') no-repeat center center;
 }
 
 select {
@@ -37,8 +37,8 @@ select:hover {
 }
 
 .row {
-    margin-right: 0px;
-    margin-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
 @media (max-width: 829px) {
@@ -57,9 +57,14 @@ select:hover {
 }
 
 th {
-    background-color: #74d3dc;
+  background-color: #74d3dc;
 }
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-   background-color: #74d3dc50;
+  background-color: #74d3dc50;
+}
+
+.btn-primary {
+  background-color: #74d3dc;
+  border-color: #74d3dc;
 }

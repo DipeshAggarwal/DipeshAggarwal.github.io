@@ -126,6 +126,10 @@ $(document).ready( function () {
             value = urlParams.get(key);
 
             table.column(index).search(value).draw();
+
+            if (key === "state"){
+                $("#state-box option[value="+value+"]").attr('selected', 'selected');
+            }
         }
     }
 });
