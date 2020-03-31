@@ -114,9 +114,18 @@ $(document).ready( function () {
     });
 
     const urlParams = new URLSearchParams(window.location.search);
+    const queryArray = ["", "state", "date", "issues", "issued_by", "source"]
+
+    if (urlParams.get("state")) {
+        table.column(1).search(urlParams.get("state")).draw();
+    }
+
     for(var key of urlParams.keys()) {
-        if ( !(isNaN(key)) ) {
-            table.column(parseInt(key)).search(urlParams.get(key)).draw();
+        if (queryArray.includes(key)) {
+            index = queryArray.indexOf(key);
+            value = urlParams.get(key);
+
+            table.column(index).search(value).draw();
         }
     }
 });
