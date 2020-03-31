@@ -1,3 +1,5 @@
+var pageLength = 15;
+
 $(document).ready( function () {
     var table = $('#orderTable').DataTable({
         "responsive": {
@@ -130,6 +132,11 @@ $(document).ready( function () {
             if (key === "state"){
                 $("#state-box option[value="+value+"]").attr('selected', 'selected');
             }
+        }
+
+        if (key === "length") {
+            pageLength = parseInt(urlParams.get(key));
+            console.log(pageLength);
         }
     }
 });
