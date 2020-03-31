@@ -36,11 +36,19 @@ select:hover {
   color: #ffffff;
 }
 
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
 @media (max-width: 829px) {
   select {
     font-size: 29px;
     font-weight: 500;
     min-width: 400px;
+  }
+  .row {
+      margin-left: -5px;
   }
 }
 

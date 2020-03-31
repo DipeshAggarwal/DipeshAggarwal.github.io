@@ -88,7 +88,7 @@ $(document).ready( function () {
                 }
             }
         },
-        "pageLength": 18,
+        "pageLength": 15,
         "lengthChange": false,
         "bServerSide": false,
         "bProcessing": true,
