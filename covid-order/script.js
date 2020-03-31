@@ -44,8 +44,8 @@ $(document).ready( function () {
                 "defaultContent": ''
             },
             { "mDataProp": "gsx$state.$t" },
-            { "mDataProp": "gsx$dateoforderannouncement.$t" },
             { "mDataProp": "gsx$issuescovered.$t" },
+            { "mDataProp": "gsx$dateoforderannouncement.$t" },
             { "mDataProp": "gsx$issuedbyannouncedby.$t" },
             { "mDataProp": "gsx$source.$t" },
             { "mDataProp": "gsx$foodincludingpds.$t" },
