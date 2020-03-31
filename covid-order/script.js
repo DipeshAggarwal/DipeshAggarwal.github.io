@@ -31,7 +31,7 @@ $(document).ready( function () {
                 }
             }
         },
-        "pageLength": 15,
+        "pageLength": pageLength,
         "lengthChange": false,
         "bServerSide": false,
         "bProcessing": true,
@@ -115,13 +115,6 @@ $(document).ready( function () {
         }
     });
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const queryArray = ["", "state", "date", "issues", "issued_by", "source"]
-
-    if (urlParams.get("state")) {
-        table.column(1).search(urlParams.get("state")).draw();
-    }
-
     for(var key of urlParams.keys()) {
         if (queryArray.includes(key)) {
             index = queryArray.indexOf(key);
@@ -129,14 +122,20 @@ $(document).ready( function () {
 
             table.column(index).search(value).draw();
 
-            if (key === "state"){
+            if (key === "state") {
                 $("#state-box option[value="+value+"]").attr('selected', 'selected');
             }
         }
-
-        if (key === "length") {
-            pageLength = parseInt(urlParams.get(key));
-            console.log(pageLength);
-        }
     }
 });
+
+const urlParams = new URLSearchParams(window.location.search);
+const queryArray = ["", "state", "date", "issues", "issued_by", "source"];
+
+// If a length query is given, show that many entries per page
+if ( urlParams.get("length") ) {
+    // Ensure that the provided value is string
+    if ( !(isNaN(urlParams.get("length"))) ) {
+        pageLength = parseInt(urlParams.get("length"))
+    }
+}
