@@ -53,6 +53,10 @@ select:hover {
   td {
     white-space: initial!important;
   }
+
+  h1 {
+    font-size: 1.8rem;
+  }
 }
 
 th {
