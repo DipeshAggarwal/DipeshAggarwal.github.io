@@ -145,15 +145,27 @@ $(document).ready( function () {
             value = aData.gsx$state.$t.replace(/\s+/g,' ').trim();
             if ( $("#state-box option[value='" + value + "']").length == 0 ) {
                 $('<option/>').val(value).html(value).appendTo('#state-box');
-            }
+            };
+            dateValue = aData.gsx$dateoforderannouncement.$t.replace(/\s+/g,' ').trim();
+            if ( $("#date-box option[value='" + dateValue + "']").length == 0 ) {
+                $('<option/>').val(dateValue).html(dateValue).appendTo('#date-box');
+            };
         },
 	});
 
-    $('select').on( 'change', function (e) {
+    $('select#state-box').on( 'change', function (e) {
         if ($(this).find(":selected").text() === "All State") {
             table.column(1).search( "\\*\\", true, false).draw();
         } else {
-            table.column(1).search( $(this).find(":selected").val(), true, false).draw();
+            table.column(1).search( $(this).find(":selected").val()).draw();
+        }
+    });
+
+    $('select#date-box').on( 'change', function (e) {
+        if ($(this).find(":selected").text() === "All Dates") {
+            table.column(2).search("").draw();
+        } else {
+            table.column(2).search( $(this).find(":selected").val()).draw();
         }
     });
 });
