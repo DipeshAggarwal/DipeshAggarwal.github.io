@@ -168,9 +168,6 @@ $(document).ready( function () {
             }
         };
 
-        $("#back-link").attr("href", "https://docs.google.com/spreadsheets/d/" + sheetID + "/edit?usp=sharing")
-        $("#back-link").text("https://docs.google.com/spreadsheets/d/" + sheetID + "/edit?usp=sharing")
-
         $("#loader").hide();
         $("#full-container").show();
     })
