@@ -2,6 +2,7 @@ $(document).ready( function () {
     var sheetID;
     var sheetName;
     var pageLength = 15;
+    var queryArray = [""];
     const urlParams = new URLSearchParams(window.location.search);
 
     if ( urlParams.get("sheet") ) {
@@ -27,11 +28,11 @@ $(document).ready( function () {
         key: sheetID
     })
     .then(function(data, tabletop) { 
-        const queryArray = data[sheetName].columnNames;
+        const columnNames = data[sheetName].columnNames;
         
         sheetData = data[sheetName].elements;
         columnObj = [{"orderable": false,"data": null,"defaultContent": ''}];
-        for (var name of queryArray) {
+        for (var name of columnNames) {
             $("#firstRow").append("<th>" + name +"</th>")
             columnObj.push({"mDataProp": name})
         }
@@ -129,7 +130,15 @@ $(document).ready( function () {
             }
         });
 
-        for(var key of urlParams.keys()) {
+        // This block creates accepted query strings from the column names.
+        // We set all the column case to lower case and use the first word of
+        // the column name if it two contains two or more string, separated by
+        // . , + - / " ' ; : and space.
+        for (var name of columnNames) {
+            queryArray.push(name.toLowerCase().split( /[\+\s,-//\."':;]+/ );[0]);
+        }
+
+        for (var key of urlParams.keys()) {
             if (queryArray.includes(key)) {
                 index = queryArray.indexOf(key);
                 value = urlParams.get(key);
