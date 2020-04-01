@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head >
+  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>COVID-19 Relief Measure Order Tracker</title>
@@ -9,8 +9,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
 
-
-  <script src="https://cdn.jsdelivr.net/npm/tabletop@1.6.2/src/tabletop.min.js"></script>
+  <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/tabletop@1.6.2/src/tabletop.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>
   <script type="text/javascript" charset="utf8" src="script.js"></script>
@@ -21,38 +20,34 @@
     <div id="full-container">
       <h1 style="margin:'auto';text-align: center;">COVID-19 MEASURES GOVERNMENT ORDERS</h1>
       <div class="row">
-          <div class="col-sm-6">
-              <select id="state-box" class="pull-left">
-                  <option value="">All States & Center</option>
-              </select>
-          </div>
-          <div class="col-sm-6">
-              <select id="issue-box">
-                  <option value="">All Issues</option>
-              </select>
-          </div>
+        <div class="col-sm-6">
+            <select id="state-box" class="pull-left">
+                <option value="">All States & Center</option>
+            </select>
+        </div>
+        <div class="col-sm-6">
+            <select id="issue-box">
+                <option value="">All Issues</option>
+            </select>
+        </div>
       </div>
 
-  	<table class="dislay responsive table-responsive table table-bordered table-striped table-hover" width="100%" id="orderTable">
-  	  <!-- Table head -->
-  	  <thead>
-  		<tr id="firstRow">
-        <th style="width:5px;"></th>
-  		</tr>
+    	<table class="dislay responsive table-responsive table table-bordered table-striped table-hover" width="100%" id="orderTable">
+    	  <thead>
+    		  <tr id="firstRow">
+            <th style="width:5px;"></th>
+    		  </tr>
     	  </thead>
-    	  <!-- Table head -->
 
-    	  <!-- Table body -->
-    	  <tbody id="orderData">
-    	  </tbody>
-    	  <!-- Table body -->
+    	  <tbody id="orderData"></tbody>
     	</table>
-    	<!-- Table  -->
       <br>
+
       <p style="margin:'auto';text-align: center;">
         <a class="btn btn-primary" data-toggle="collapse" href="#contact" role="button" aria-expanded="false" aria-controls="contact" onClick='$("html, body").animate({ scrollTop: $(document).height() }, "slow");'>Contact Us</a>
         <a class="btn btn-primary" data-toggle="collapse" href="#disclaimer" role="button" aria-expanded="false" onClick='$("html, body").animate({ scrollTop: $(document).height() }, "slow");'>Disclaimer</a>
       </p>
+
       <div class="collapse" id="contact">
         <div class="card card-body">
           <div style="margin:'auto';text-align: center;">While utmost care has been taken while uploading the orders/circulars/notifications/notices as issued by the various State and Central Govt.’s from time to time in relation to COVID-19, however, we are extremely sorry for any discrepancy found therein. If you find any discrepancy, issue, wish to report any anomaly, or send any additional information that may be added here, kindly send the information, suggestions and grievances to <a href="mailto:someone@example.com" target="_top">legal.cso@gmail.com</a>.</div>
