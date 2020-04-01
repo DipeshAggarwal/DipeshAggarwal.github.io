@@ -135,7 +135,7 @@ $(document).ready( function () {
         // the column name if it two contains two or more string, separated by
         // . , + - / " ' ; : and space.
         for (var name of columnNames) {
-            queryArray.push(name.toLowerCase().split( /[\+\s,-//\."':;]+/ );[0]);
+            queryArray.push(name.toLowerCase().split( /[\+\s,-//\."':;]+/ )[0] );
         }
 
         for (var key of urlParams.keys()) {
